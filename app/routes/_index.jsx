@@ -54,6 +54,13 @@ function loadDeferredData({context}) {
       return null;
     });
 
+  const fu = async () => {
+    const data = await context.storefront.query(RECOMMENDED_PRODUCTS_QUERY);
+    console.log(JSON.stringify(data, null, 2));
+  };
+
+  fu();
+
   return {
     recommendedProducts,
   };
